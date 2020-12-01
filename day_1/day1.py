@@ -1,9 +1,9 @@
 expenses = []
 results = []
-for c in open("day_1/expenses.txt"):
+for c in open("expenses.txt"):
     expenses.append(int(c))
 
-# 1st task
+# 1st task, slower coz two loops
 for i in expenses:
     for j in expenses:
         if i+j == 2020:
@@ -11,7 +11,26 @@ for i in expenses:
                     results.append(i*j)
 print(results)
 results.clear()
-# 2nd task
+
+# 1st task but different approach (faster) coz only one loop
+choosen_number = 0
+iterator = 0
+while iterator < len(expenses):
+    if expenses[choosen_number]+expenses[iterator] == 2020:
+        print(f'{expenses[choosen_number]}+{expenses[iterator]}=2020')
+        print(expenses[choosen_number]*expenses[iterator])
+        break
+    else:
+        iterator +=1
+        if iterator == 200:
+            choosen_number +=1
+            iterator = 0
+        elif iterator == choosen_number:
+            iterator +=1
+        else:
+            pass
+
+# 2nd task, optimalization is literally non-existing coz of three loops
 for i in expenses:
     for j in expenses:
         for k in expenses:
