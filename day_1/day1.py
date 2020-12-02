@@ -43,7 +43,7 @@ for i in expenses:
                     results.append(i*j*k)
 print(results)
 
-# 2nd task, optimalised
+# 2nd task, optimalised [still working on that]
 
 while iterator < len(expenses):
     if expenses[choosen_number]+expenses[iterator] == 2020:
