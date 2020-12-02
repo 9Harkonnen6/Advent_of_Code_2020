@@ -16,3 +16,19 @@ for e in data:
         results.append(password)
         
 print(len(results))
+results.clear()
+# 2nd task
+for e in data:
+    x = int(e[0:e.index('-')])
+    y = int(e[(e.index('-')+1):e.index(' ')])
+    letter = e[e.index(' ')+1]
+    password = e[e.index(':')+2:-1]
+
+    # logic
+    if  password[x-1] == letter and password[y-1] == letter:
+        pass
+    elif password[x-1] != letter and password[y-1] != letter:
+        pass
+    else:
+        results.append(e)
+print(len(results))
